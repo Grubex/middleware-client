@@ -31,7 +31,7 @@ class Home extends Component {
     return(
       <HomeContainer>
         <h1>Client Middleware</h1>
-        <Button>
+        <Button onClick={() => this.onButtonPress()}>
           <p>Log In with PI</p>
         </Button>
       </HomeContainer>
