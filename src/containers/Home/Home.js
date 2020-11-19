@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import HomeContainer from '../../styles/HomeContainer';
 import Button from '../../styles/Button';
+import { Link, Redirect } from 'react-router-dom';
+import OpenApp from "react-open-app";
+
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: ''
+      url: '',
+      gotUUID: true,
     }
   }
 
   componentDidMount() {
-    this.parseURL()
+    if(localStorage.getItem('UUID' !== null || undefined)) {
+      this.setState({ gotUUID: true })
+    }
   }
 
   parseURL() {
@@ -20,20 +26,21 @@ class Home extends Component {
   }
 
   onButtonPress() { 
-    if(localStorage.getItem('UUID') === null || undefined) {
-      return alert('There was a problem.')
-    }
+    // if(localStorage.getItem('UUID') === null || undefined) {
+    //   return alert('There was a problem.')
+    // }
 
-    alert(`Logging you in with uuid: ${localStorage.getItem('UUID')}`)
   }
 
   render() {
     return(
       <HomeContainer>
         <h1>Client Middleware</h1>
-        <Button onClick={() => this.onButtonPress()}>
-          <p>Log In with PI</p>
-        </Button>
+        <form action="demo://authenticate" target="_blank">
+          <Button type="submit" onClick={() => this.onButtonPress()}>
+            <p>Log In with PI</p>
+          </Button>          
+        </form>
       </HomeContainer>
     )
   }
