@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomeContainer from '../../styles/HomeContainer';
-// import Button from '../../styles/Button';
+import Button from '../../styles/Button';
 
 
 
@@ -35,9 +35,11 @@ class Home extends Component {
     return(
       <HomeContainer>
         <h1>Client Middleware</h1>
-        <form action="demo://authenticate" target="_blank">
-          <input type="submit" value="Open App" />    
-        </form>
+        <a href="demo://authenticate" clientData={`{ 'UUID': ${localStorage.getItem('UUID')} }`} target="_blank" rel="noreferrer">
+          <Button>
+            <p>Log In</p>
+          </Button>
+        </a>
       </HomeContainer>
     )
   }
