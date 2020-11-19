@@ -19,6 +19,14 @@ class Home extends Component {
     console.log(url)
   }
 
+  onButtonPress() { 
+    if(localStorage.getItem('UUID') === null || undefined) {
+      return alert('There was a problem.')
+    }
+
+    alert(`Logging you in with uuid: ${localStorage.getItem('UUID')}`)
+  }
+
   render() {
     return(
       <HomeContainer>
