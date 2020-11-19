@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import HomeContainer from '../../styles/HomeContainer';
 import Button from '../../styles/Button';
-import { Link, Redirect } from 'react-router-dom';
-import OpenApp from "react-open-app";
+
 
 
 class Home extends Component {
