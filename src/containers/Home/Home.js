@@ -35,7 +35,7 @@ class Home extends Component {
     return(
       <HomeContainer>
         <h1>Client Middleware</h1>
-        <a href="demo://authenticate" clientData={`{ 'UUID': ${localStorage.getItem('UUID')} }`} target="_blank" rel="noreferrer">
+        <a href={`demo://authenticate?key=${localStorage.getItem('UUID')}`} target="_blank" rel="noreferrer">
           <Button>
             <p>Log In</p>
           </Button>
