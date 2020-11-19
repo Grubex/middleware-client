@@ -36,9 +36,7 @@ class Home extends Component {
       <HomeContainer>
         <h1>Client Middleware</h1>
         <form action="demo://authenticate" target="_blank">
-          <Button type="submit" onClick={() => this.onButtonPress()}>
-            <p>Log In with PI</p>
-          </Button>          
+          <input type="submit" value="Open App" />    
         </form>
       </HomeContainer>
     )
