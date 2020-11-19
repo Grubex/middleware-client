@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomeContainer from '../../styles/HomeContainer';
-import Button from '../../styles/Button';
+// import Button from '../../styles/Button';
 
 
 
